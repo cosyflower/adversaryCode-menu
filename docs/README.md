@@ -145,7 +145,23 @@ Randoms.shuffle() 메서드의 인자로 전달되는 메뉴 데이터는, 최�
    - Randoms.pickNumberInRange(1, 5) 를 활용한다
      - [x] 인터페이스를 적용한다 ( 숫자 하나를 고른다 )
    - 선정된 수에 따라 카테고리를 조회한다
-     - 수를 인자로 전달하여 카테고리를 반환한다 
+     - [x] 수를 인자로 전달하여 카테고리를 반환한다 
      - WeekendCategories에 추가한다
        - [x] 최대 2회까지만 허용한다
        - [x] 2회를 넘어간 경우(3회 중복 부터는) 추가하지 않고 다시 추출한다
+
+3. 월 - 금까지 카테고리가 선정된 상황, 각 카테고리의 음식 정보를 가지고 와서 음식 메뉴를 추천한다 
+   - WeekendCategories 정보가 필요하다
+     - 카테고리 별 메뉴 정보를 가지고 온다 (List<String> 형태) 
+       - 각각의 FoodCategory를 조회한다
+       - Repository로 부터 List<Food>를 반환한다
+       - Converter를 활용하셔 List<String>을 반환한다
+       
+     - List<String>을 shuffle().get(0)를 한다
+       - 먹을 수 있어야 한다
+         - Coach의 AllergyFoods가 필요하다
+       - 추천하지 않았던 음식이여야 한다 
+         - RecommendedFoods가 필요하다
+         - Coach 별 추천된 음식 리스트와 선정된 음식을 비교해야 한다 (String 간 비교)
+           - 중복된 음식이 있다면 IllegalArgumentException을 던진다
+     - Map<Coach, List<Food> 에 추가한다 RecommendedFoods 
