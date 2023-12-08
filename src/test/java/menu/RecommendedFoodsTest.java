@@ -1,12 +1,15 @@
 package menu;
 
 import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
 import menu.coach.AllergicFoods;
 import menu.coach.Coach;
 import menu.coach.Name;
 import menu.food.Food;
 import menu.food.FoodCategory;
 import menu.food.FoodName;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class RecommendedFoodsTest {
@@ -18,13 +21,17 @@ public class RecommendedFoodsTest {
         Coach coach = new Coach(new Name("성훈"),
                 new AllergicFoods(Arrays.asList(food)));
         Coach otherCoach = new Coach(new Name("혜림"),
-                new AllergicFoods(Arrays.asList(food)));
+                new AllergicFoods(Arrays.asList(otherFood)));
 
         RecommendedFoods recommendedFoods = new RecommendedFoods(Arrays.asList(coach, otherCoach));
 
-        recommendedFoods.addRecommendedFood(coach, food);
-        recommendedFoods.addRecommendedFood(coach, food);
-        recommendedFoods.addRecommendedFood(otherCoach, food);
+        Assertions.assertThatCode(() -> {
+                    recommendedFoods.addRecommendedFood(coach, otherFood);
+                    recommendedFoods.addRecommendedFood(coach, otherFood);
+                }).isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining("중복된 메뉴입니다.");
+
+
     }
 
     @Test
@@ -36,7 +43,6 @@ public class RecommendedFoodsTest {
 
         RecommendedFoods recommendedFoods = new RecommendedFoods(Arrays.asList(coach));
 
-        recommendedFoods.addRecommendedFood(coach, food);
         recommendedFoods.addRecommendedFood(coach, otherFood);
     }
 
@@ -52,6 +58,8 @@ public class RecommendedFoodsTest {
 
         RecommendedFoods recommendedFoods = new RecommendedFoods(Arrays.asList(coach, otherCoach));
 
-        recommendedFoods.addRecommendedFood(otherCoach, otherFood);
+        Assertions.assertThatCode(() -> recommendedFoods.addRecommendedFood(otherCoach, otherFood))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining("먹지 못하는");
     }
 }

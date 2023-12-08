@@ -159,10 +159,10 @@ Randoms.shuffle() 메서드의 인자로 전달되는 메뉴 데이터는, 최�
        
      - List<String>을 shuffle().get(0)를 한다
        - 먹을 수 있어야 한다
-         - Coach의 AllergyFoods가 필요하다
-         - AllergicFoods에 포함되어 있어서는 안 된다 // 2시간 25분
+         - [x] Coach의 AllergyFoods가 필요하다
+         - [x] AllergicFoods에 포함되어 있어서는 안 된다 // 2시간 25분
        - 추천하지 않았던 음식이여야 한다 
          - RecommendedFoods가 필요하다 (Coach 정보가 필요하다 - 초기화 하기 위함 e)
          - Coach 별 추천된 음식 리스트와 선정된 음식을 비교해야 한다 (String 간 비교)
-           - 중복된 음식이 있다면 IllegalArgumentException을 던진다
+           - [x] 중복된 음식이 있다면 IllegalArgumentException을 던진다
      - Map<Coach, List<Food> 에 추가한다 RecommendedFoods 
