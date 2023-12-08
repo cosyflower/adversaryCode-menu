@@ -4,7 +4,6 @@ import static menu.food.FoodCategory.JAPANESE_FOOD;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 import menu.food.Food;
 import menu.food.FoodName;
 import menu.repository.FoodRepository;
@@ -24,9 +23,7 @@ public class FoodRepositoryTest {
         foodRepository.addFoodsByCategory(japaneseFoods);
         List<Food> foodsWithCategory = foodRepository.findFoodsWithCategory(JAPANESE_FOOD);
 
-        List<String> foodValues = foodsWithCategory.stream()
-                .map(Food::getFoodNameValue)
-                .collect(Collectors.toList());
+        List<String> foodValues = Converter.convertToFoodNameValues(foodsWithCategory);
 
         Assertions.assertThat(foodValues).containsExactly("규동", "우동");
     }
