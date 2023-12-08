@@ -1,6 +1,6 @@
 package menu;
 
-public enum FoodCategory {
+public enum FoodCategory { // 35
     // 1이면 일식, 2면 한식, 3이면 중식, 4면 아시안, 5면 양식
     JAPANESE_FOOD(1, "일식"),
     KOREAN_FOOD(2, "한식"),

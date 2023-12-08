@@ -135,4 +135,9 @@ Randoms.shuffle() 메서드의 인자로 전달되는 메뉴 데이터는, 최�
 1. 먼저 기본적인 정보를(메뉴, 그리고 카테고리) 저장해야 한다
    - [x] 카테고리를 Enum으로 형성
    - [] Food는 FoodCategory 그리고 FoodName으로 구성되어야 한다
+     - ENUM으로 구성하려 했지만 양이 너무 많음 - Food with FoodCategory, FoodName in Class
+     - Initialization 클래스를 활용해서 등록해야 하는 정보를 미리 세팅한다
+     - FoodRepo Map<FoodCategory, Food>
+       - 추가할 수 있어야 한다
+       - 카테고리 별 음식들을 조회할 수 있다 (List<String> 형태로 전달해야 한다)
 2. 클래스를 구성하고 테스트 코드를 작성한다
