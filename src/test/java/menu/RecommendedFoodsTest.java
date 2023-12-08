@@ -1,8 +1,6 @@
 package menu;
 
 import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
 import menu.coach.AllergicFoods;
 import menu.coach.Coach;
 import menu.coach.Name;
