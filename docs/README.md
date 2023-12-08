@@ -165,4 +165,6 @@ Randoms.shuffle() 메서드의 인자로 전달되는 메뉴 데이터는, 최�
          - RecommendedFoods가 필요하다 (Coach 정보가 필요하다 - 초기화 하기 위함 e)
          - Coach 별 추천된 음식 리스트와 선정된 음식을 비교해야 한다 (String 간 비교)
            - [x] 중복된 음식이 있다면 IllegalArgumentException을 던진다
-     - Map<Coach, List<Food> 에 추가한다 RecommendedFoods 
+     - Map<Coach, List<Food> 에 추가한다 RecommendedFoods // 2시간 40분 소요 136 남음
+
+4. 난수를 다루는 메서드를 포함하는 클래스 - RandomGenerator
