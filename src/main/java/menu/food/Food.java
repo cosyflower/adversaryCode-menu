@@ -8,4 +8,12 @@ public class Food {
         this.foodCategory = foodCategory;
         this.foodName = foodName;
     }
+
+    public FoodCategory getFoodCategory() {
+        return foodCategory;
+    }
+
+    public String getFoodNameValue() {
+        return foodName.getFoodNameValue();
+    }
 }

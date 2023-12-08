@@ -6,4 +6,8 @@ public class FoodName {
     public FoodName(String foodNameValue) {
         this.foodNameValue = foodNameValue;
     }
+
+    public String getFoodNameValue() {
+        return foodNameValue;
+    }
 }
