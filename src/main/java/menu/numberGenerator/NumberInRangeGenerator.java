@@ -1,4 +1,4 @@
-package menu;
+package menu.numberGenerator;
 
 import camp.nextstep.edu.missionutils.Randoms;
 
