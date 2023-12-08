@@ -22,7 +22,11 @@ public class RecommendedFoods {
 
     public void addRecommendedFood(Coach coach, Food otherFood) {
         List<Food> foods = coachAndFoodsMap.get(coach);
-        if (hasValidateFoods(foods, otherFood)) {
+        if (coach.hasAllergy(otherFood)) {
+            throw new IllegalArgumentException("먹지 못하는 메뉴입니다. 메뉴를 다시 정합니다.");
+        }
+
+        if (hasDuplicatedFood(foods, otherFood)) {
             throw new IllegalArgumentException("중복된 메뉴입니다. 메뉴를 다시 정합니다.");
         }
 
@@ -30,7 +34,7 @@ public class RecommendedFoods {
         coachAndFoodsMap.replace(coach, foods);
     }
 
-    private boolean hasValidateFoods(List<Food> foods, Food otherFood) {
+    private boolean hasDuplicatedFood(List<Food> foods, Food otherFood) {
         return foods.contains(otherFood);
     }
 

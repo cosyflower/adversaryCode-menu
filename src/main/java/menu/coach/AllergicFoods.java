@@ -9,4 +9,8 @@ public class AllergicFoods {
     public AllergicFoods(List<Food> allergicFoods) {
         this.allergicFoods = allergicFoods;
     }
+
+    public boolean containFood(Food otherFood) {
+        return allergicFoods.contains(otherFood);
+    }
 }
