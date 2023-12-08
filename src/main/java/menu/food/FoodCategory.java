@@ -1,4 +1,4 @@
-package menu;
+package menu.food;
 
 public enum FoodCategory { // 35
     // 1이면 일식, 2면 한식, 3이면 중식, 4면 아시안, 5면 양식

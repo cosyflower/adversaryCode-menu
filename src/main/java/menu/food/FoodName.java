@@ -1,4 +1,4 @@
-package menu;
+package menu.food;
 
 public class FoodName {
     private final String foodNameValue;

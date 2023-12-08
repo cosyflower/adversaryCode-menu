@@ -1,4 +1,4 @@
-package menu;
+package menu.food;
 
 public class Food {
     private final FoodCategory foodCategory;
