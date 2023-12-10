@@ -1,9 +1,11 @@
 package menu;
 
+import java.util.ArrayList;
 import java.util.List;
 import menu.coach.AllergicFoods;
 import menu.coach.Coach;
 import menu.coach.CoachNames;
+import menu.coach.Coaches;
 import menu.coach.Name;
 import menu.dto.CoachAllergicFoodsDTO;
 import menu.dto.CoachNamesDTO;
@@ -40,15 +42,19 @@ public class FoodRecommendator {
         CoachNames coachNames = coachNamesDTO.toCoachNames();
 
         // 2. 각 코치별 먹지 못하는 음식을 등록한다
+        // 동시에 코치들을 등록해야 한다
+        List<Coach> coachList = new ArrayList<>();
+
         List<String> registeredCoachNames = coachNames.getCoachNames();
         for (String registeredCoachName : registeredCoachNames) {
             CoachAllergicFoodsDTO coachAllergicFoodsDTO =
                     new CoachAllergicFoodsDTO(inputView.inputCoachAllergicFoods(registeredCoachName));
             AllergicFoods allergicFoods = coachAllergicFoodsDTO.toAllergicFoods(foodRepository);
-            new Coach(new Name(registeredCoachName), allergicFoods);
+            coachList.add(new Coach(new Name(registeredCoachName), allergicFoods));
         }
 
-        // 코치들을 형성한다
+        Coaches coaches = new Coaches(coachList);
+
 
         // RandomGenerator -> WeekendCategories 를 먼저 형성한다
         // RandomGenerator -> RecommendedFoods에 추가한다
