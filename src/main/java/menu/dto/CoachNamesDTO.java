@@ -2,7 +2,7 @@ package menu.dto;
 
 import java.util.Arrays;
 import java.util.stream.Collectors;
-import menu.CoachNames;
+import menu.coach.CoachNames;
 import menu.util.Regex;
 
 public class CoachNamesDTO {

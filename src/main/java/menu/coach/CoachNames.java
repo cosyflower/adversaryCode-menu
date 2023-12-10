@@ -1,6 +1,7 @@
-package menu;
+package menu.coach;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class CoachNames {
@@ -34,5 +35,9 @@ public class CoachNames {
         if (validNameLengthConditition) {
             throw new IllegalArgumentException("코치의 이름은 최소 2자에서 최대 4자만 가능합니다. 다시 입력해주세요.");
         }
+    }
+
+    public List<String> getCoachNames() {
+        return Collections.unmodifiableList(coachNames);
     }
 }
