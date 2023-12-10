@@ -40,7 +40,6 @@ public class FoodRepository {
 
     public boolean containSameFoodName(String allergicFoodName) {
         // Category 별 모든 Food를 조회한다
-        // Food의 이름을 파악한다
         Set<Entry<FoodCategory, List<Food>>> entries = foodRepository.entrySet();
         for (Entry<FoodCategory, List<Food>> entry : entries) {
             List<Food> foodsPerCategory = entry.getValue();

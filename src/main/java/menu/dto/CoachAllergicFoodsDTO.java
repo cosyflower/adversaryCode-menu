@@ -36,13 +36,13 @@ public class CoachAllergicFoodsDTO {
     }
 
     public AllergicFoods toAllergicFoods(FoodRepository foodRepository) {
-        // 존재하는 메뉴는 이미 한정되어 있다고 생각하자
         String[] splitAllergicFoods = coachAllergicFoodsDTO.split(",");
 
         for (String allergicFoodName : splitAllergicFoods) {
             if (foodRepository.containSameFoodName(allergicFoodName)) {
-                throw new IllegalArgumentException("존재하지 않은 메뉴를 입력했습니다. 다시 입력해주세요.");
+                continue;
             }
+            throw new IllegalArgumentException("존재하지 않은 메뉴를 입력했습니다. 다시 입력해주세요.");
         }
 
         List<Food> mappedFoods = Arrays.stream(splitAllergicFoods)

@@ -1,23 +1,13 @@
 package menu;
 
 import menu.dto.CoachAllergicFoodsDTO;
-import menu.dto.CoachNamesDTO;
-import menu.initialization.Initialization;
-import menu.repository.FoodRepository;
 import org.assertj.core.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.NullAndEmptySource;
 
 public class CoachAllergicDTOTest {
-    private FoodRepository foodRepository;
-    @BeforeEach
-    void setUp() {
-        FoodRepository foodRepository = Initialization.setAllMenus();
-    }
-
     @Nested
     class 성공 {
         @Test
