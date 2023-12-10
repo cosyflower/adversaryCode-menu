@@ -1,5 +1,6 @@
 package menu;
 
+import menu.dto.CoachNamesDTO;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -11,13 +12,13 @@ public class CoachNamesDTOTest {
     class 성공 {
         @Test
         void 단독입력_성공() {
-            Assertions.assertThatCode(() -> new CoachNamesDTO("sunghun"))
+            Assertions.assertThatCode(() -> new CoachNamesDTO("성훈"))
                     .doesNotThrowAnyException();
         }
 
         @Test
         void flow() {
-            Assertions.assertThatCode(() -> new CoachNamesDTO("sung,hun"))
+            Assertions.assertThatCode(() -> new CoachNamesDTO("성훈,혜림"))
                     .doesNotThrowAnyException();
         }
     }
@@ -33,8 +34,8 @@ public class CoachNamesDTOTest {
         }
 
         @Test
-        void flow() {
-            Assertions.assertThatCode(() -> new CoachNamesDTO("sung hun"))
+        void 구분자가_존재하지_아니한_경우() {
+            Assertions.assertThatCode(() -> new CoachNamesDTO("성훈 혜림"))
                     .isInstanceOf(IllegalArgumentException.class)
                     .hasMessageContaining("잘못된 입력입니다.");
         }

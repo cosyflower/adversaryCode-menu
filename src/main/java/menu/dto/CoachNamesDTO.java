@@ -1,5 +1,8 @@
-package menu;
+package menu.dto;
 
+import java.util.Arrays;
+import java.util.stream.Collectors;
+import menu.CoachNames;
 import menu.util.Regex;
 
 public class CoachNamesDTO {
@@ -29,6 +32,8 @@ public class CoachNamesDTO {
     }
 
     public CoachNames toCoachNames() {
-        return null;
+        String[] splitCoachNames = coachNamesDTO.split(",");
+        return new CoachNames(Arrays.stream(splitCoachNames)
+                .collect(Collectors.toList()));
     }
 }

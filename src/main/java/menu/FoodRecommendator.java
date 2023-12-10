@@ -1,5 +1,6 @@
 package menu;
 
+import menu.dto.CoachNamesDTO;
 import menu.initialization.Initialization;
 import menu.repository.FoodRepository;
 import menu.view.InputView;
