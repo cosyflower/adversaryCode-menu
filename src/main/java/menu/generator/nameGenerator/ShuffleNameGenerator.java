@@ -1,4 +1,4 @@
-package menu.nameGenerator;
+package menu.generator.nameGenerator;
 
 import camp.nextstep.edu.missionutils.Randoms;
 import java.util.List;

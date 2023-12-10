@@ -1,4 +1,4 @@
-package menu.nameGenerator;
+package menu.generator.nameGenerator;
 
 import java.util.List;
 

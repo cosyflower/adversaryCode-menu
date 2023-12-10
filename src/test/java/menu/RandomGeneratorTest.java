@@ -3,8 +3,9 @@ package menu;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.IntStream;
-import menu.nameGenerator.ShuffleNameGenerator;
-import menu.numberGenerator.NumberInRangeGenerator;
+import menu.generator.RandomGenerator;
+import menu.generator.nameGenerator.ShuffleNameGenerator;
+import menu.generator.numberGenerator.NumberInRangeGenerator;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 

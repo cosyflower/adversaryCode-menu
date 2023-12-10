@@ -1,8 +1,8 @@
-package menu;
+package menu.generator;
 
 import java.util.List;
-import menu.nameGenerator.RandomNameGenerator;
-import menu.numberGenerator.RandomNumberGenerator;
+import menu.generator.nameGenerator.RandomNameGenerator;
+import menu.generator.numberGenerator.RandomNumberGenerator;
 
 public class RandomGenerator {
     // 난수 생성 혹은 난수를 적용해야 하는 메서드들을 모아둔 킄래스

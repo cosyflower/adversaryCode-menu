@@ -1,4 +1,4 @@
-package menu.numberGenerator;
+package menu.generator.numberGenerator;
 
 public interface RandomNumberGenerator {
     int generateRandomNumber();
